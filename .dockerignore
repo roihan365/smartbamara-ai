@@ -1,0 +1,8 @@
+__pycache__/
+.vscode/
+.env
+*.pyc
+*.pyo
+*.pyd
+*.db
+auth.json
