@@ -1,7 +1,9 @@
 FROM python:3.10-slim
 
-# Install ffmpeg
-RUN apt-get update && apt-get install -y ffmpeg && apt-get clean
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y ffmpeg gcc git && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app

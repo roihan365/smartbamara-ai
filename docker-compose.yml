@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  smartbamara-api:
+    build: .
+    container_name: smartbamara-api
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    runtime: nvidia
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
