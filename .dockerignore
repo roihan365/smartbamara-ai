@@ -1,8 +1,12 @@
 __pycache__/
-.vscode/
 .env
 *.pyc
 *.pyo
 *.pyd
 *.db
+*.sqlite3
+result/
+models/
+.vscode/
+.env/
 auth.json

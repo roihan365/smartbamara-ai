@@ -1,0 +1,31 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build', '-t',
+        'us-central1-docker.pkg.dev/$PROJECT_ID/whisper-repo/smartbamara-ai',
+        '.'
+      ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        'us-central1-docker.pkg.dev/$PROJECT_ID/whisper-repo/smartbamara-ai'
+      ]
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args:
+      [
+        'run', 'deploy', 'smartbamara-ai',
+        '--image=us-central1-docker.pkg.dev/$PROJECT_ID/whisper-repo/smartbamara-ai',
+        '--region=us-central1',
+        '--memory=8Gi',
+        '--cpu=4',
+        '--gpu=1',
+        '--gpu-type=nvidia-l4',
+        '--allow-unauthenticated',
+        '--execution-environment=gen2',
+        '--max-instances=1'
+      ]
