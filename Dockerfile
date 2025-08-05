@@ -1,5 +1,8 @@
 # FROM python:3.10-slim
-FROM nvidia/cuda:12.2.0-cudnn8-runtime-ubuntu22.04
+FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Asia/Makassar
 
 # Install dependencies
 RUN apt-get update && \

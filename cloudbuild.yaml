@@ -28,5 +28,5 @@ steps:
         '--allow-unauthenticated',
         '--execution-environment=gen2',
         '--max-instances=1',
-        '--mount-secrets=/secrets/env-vars=env-vars'
+        '--set-secrets=ENV_VAR_NAME=env-vars:latest'
       ]
