@@ -14,8 +14,10 @@ COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Copy all project files
-COPY . /app
-WORKDIR /app
+COPY . .
+
+# Set environment variable for uvicorn
+ENV PYTHONUNBUFFERED=1
 
 # Expose FastAPI default port
 EXPOSE 8000
