@@ -21,7 +21,7 @@ COPY . .
 
 # Set environment variable for uvicorn
 ENV PYTHONUNBUFFERED=1
-ENV PYTHONPATH="/app"
+ENV PYTHONPATH=/app
 
 # Expose FastAPI default port
 EXPOSE 8000
