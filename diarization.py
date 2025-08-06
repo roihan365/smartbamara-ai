@@ -23,7 +23,6 @@ from pydub.playback import play
 from fastapi import APIRouter, UploadFile, File, Form
 from gemini.summarize import ringkas_transkrip
 from fastapi import BackgroundTasks
-from result.result_store import init_result, save_result, get_result
 from supabase_client import supabase
 
 router = APIRouter()
