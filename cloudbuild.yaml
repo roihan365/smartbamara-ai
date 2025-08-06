@@ -30,3 +30,5 @@ steps:
         '--max-instances=1',
         '--set-secrets=ENV_VAR_NAME=env-vars:latest'
       ]
+options:
+  logging: CLOUD_LOGGING_ONLY
