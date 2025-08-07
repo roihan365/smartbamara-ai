@@ -29,8 +29,17 @@ router = APIRouter()
 
 # Load API Keys
 # load_dotenv()
-if os.path.exists("/secrets/ENV_VAR_NAME"):
-    load_dotenv("/secrets/ENV_VAR_NAME")
+if os.path.exists("/secrets"):
+    print("✅ Secrets directory found.")
+    print("Available secrets:", os.listdir("/secrets"))
+
+    if os.path.exists("/secrets/ENV_VAR_NAME"):
+        load_dotenv("/secrets/ENV_VAR_NAME")
+    else:
+        print("⚠️ Secret file '/secrets/ENV_VAR_NAME' not found.")
+else:
+    print("⚠️ Secrets directory '/secrets' not found. Probably running outside of Cloud Run Gen2.")
+
 HUGGINGFACE_TOKEN = os.getenv("HUGGINGFACE_TOKEN")  # Token untuk Pyannote
 
 if not HUGGINGFACE_TOKEN:
