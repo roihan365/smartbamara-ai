@@ -14,8 +14,7 @@ from diarization import router as diarization_router
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[""],  # Atau [""] untuk semua origin (tidak direkomendasikan di production)
-    allow_credentials=True,
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
