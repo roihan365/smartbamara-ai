@@ -28,7 +28,7 @@ steps:
         '--allow-unauthenticated',
         '--execution-environment=gen2',
         '--max-instances=1',
-        '--set-secrets=ENV_VAR_NAME=env-vars:latest'
+        '--set-secrets=ENV_VAR_NAME=env-vars:1'
       ]
 options:
   logging: CLOUD_LOGGING_ONLY

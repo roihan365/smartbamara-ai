@@ -4,8 +4,9 @@ import os
 from dotenv import load_dotenv
 
 # load_dotenv()
-if os.path.exists("/secrets/env-vars/.env"):
-    load_dotenv("/secrets/env-vars/.env")
+print("Available secrets:", os.listdir("/secrets"))
+if os.path.exists("/secrets/ENV_VAR_NAME"):
+    load_dotenv("/secrets/ENV_VAR_NAME")
 
 supabase_url = os.getenv("SUPABASE_URL")
 supabase_key = os.getenv("SUPABASE_KEY")

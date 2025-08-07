@@ -29,8 +29,8 @@ router = APIRouter()
 
 # Load API Keys
 # load_dotenv()
-if os.path.exists("/secrets/env-vars/.env"):
-    load_dotenv("/secrets/env-vars/.env")
+if os.path.exists("/secrets/ENV_VAR_NAME"):
+    load_dotenv("/secrets/ENV_VAR_NAME")
 HUGGINGFACE_TOKEN = os.getenv("HUGGINGFACE_TOKEN")  # Token untuk Pyannote
 
 if not HUGGINGFACE_TOKEN:
