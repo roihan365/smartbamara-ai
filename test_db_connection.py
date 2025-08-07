@@ -3,16 +3,17 @@ import psycopg2
 from dotenv import load_dotenv
 
 # Load .env
-if os.path.exists("/secrets"):
-    print("✅ Secrets directory found.")
-    print("Available secrets:", os.listdir("/secrets"))
+load_dotenv()
+# if os.path.exists("/secrets"):
+#     print("✅ Secrets directory found.")
+#     print("Available secrets:", os.listdir("/secrets"))
 
-    if os.path.exists("/secrets/ENV_VAR_NAME"):
-        load_dotenv("/secrets/ENV_VAR_NAME")
-    else:
-        print("⚠️ Secret file '/secrets/ENV_VAR_NAME' not found.")
-else:
-    print("⚠️ Secrets directory '/secrets' not found. Probably running outside of Cloud Run Gen2.")
+#     if os.path.exists("/secrets/ENV_VAR_NAME"):
+#         load_dotenv("/secrets/ENV_VAR_NAME")
+#     else:
+#         print("⚠️ Secret file '/secrets/ENV_VAR_NAME' not found.")
+# else:
+#     print("⚠️ Secrets directory '/secrets' not found. Probably running outside of Cloud Run Gen2.")
 
 try:
     conn = psycopg2.connect(

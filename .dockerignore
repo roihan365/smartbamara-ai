@@ -1,5 +1,4 @@
 __pycache__/
-.env
 *.pyc
 *.pyo
 *.pyd
@@ -8,5 +7,4 @@ __pycache__/
 result/
 models/
 .vscode/
-.env/
 auth.json
