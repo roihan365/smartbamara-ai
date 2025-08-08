@@ -44,7 +44,7 @@ HUGGINGFACE_TOKEN = os.getenv("HUGGINGFACE_TOKEN")  # Token untuk Pyannote
 
 if not HUGGINGFACE_TOKEN:
     raise ValueError("❌ HUGGINGFACE_TOKEN tidak ditemukan di environment variables!")
-
+print(f"✅ HUGGINGFACE_TOKEN ditemukan! {HUGGINGFACE_TOKEN}")
 # Login ke Hugging Face untuk memastikan akses model
 login(HUGGINGFACE_TOKEN)
 print("Login berhasil!")
