@@ -28,6 +28,7 @@ steps:
         # '--gpu-type=nvidia-l4',
         '--allow-unauthenticated',
         '--execution-environment=gen2',
+        '--min-instances=1',
         '--max-instances=1',
         '--set-secrets=ENV_VAR_NAME=env-vars:1'
       ]
